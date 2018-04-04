@@ -115,6 +115,13 @@ Projet
 - 将index.html放到'node_service'下的public里面 `npm i` -> `npm start`
 - 访问http://127.0.0.1:8006/
 
+## 参考文档
+- [webpack](https://webpack.js.org/)
+- [eslint](https://eslint.org/)
+- [jenkins](https://jenkins.io/)
+- [stylelint](https://stylelint.io/)
+- [karma](http://karma-runner.github.io/2.0/index.html)
+
 ## 规则
    - scss
      + 项目定义类名、id、属性等使用 `^[a-z0-9\_\-]+$`
