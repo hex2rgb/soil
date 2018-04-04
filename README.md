@@ -109,11 +109,6 @@ Projet
    └- store  状态树(组件传参, 状态维护)
 
 ```
-## demo run
-- vue项目build
-- 将dist下的static放到'vue_static'下的public里面  `npm i` -> `npm start`
-- 将index.html放到'node_service'下的public里面 `npm i` -> `npm start`
-- 访问http://127.0.0.1:8006/
 
 ## 参考文档
 - [webpack](https://webpack.js.org/)
@@ -121,26 +116,3 @@ Projet
 - [jenkins](https://jenkins.io/)
 - [stylelint](https://stylelint.io/)
 - [karma](http://karma-runner.github.io/2.0/index.html)
-
-## 规则
-   - scss
-     + 项目定义类名、id、属性等使用 `^[a-z0-9\_\-]+$`
-     + function 使用全小写英文 
-     + 框架等其他依赖不做限制
-     
-   - js
-     + 命名小驼峰
-     + 函数最大形参 4个
-     + 允许匿名函数
-     + 字符串单引号
-     + 注释符号前后空格
-     + 禁止alert
-     + 最大空白行 1行
-     + 禁止结尾逗号
-     + 强制结尾分号
-     
-   - html
-     + 每行最大长度100字符
-   
-   - 文件
-     + 命名 `^[a-z0-9\\-_./]+$|^src/App.vue$`
