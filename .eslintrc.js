@@ -68,7 +68,7 @@ module.exports = {
         "no-multiple-empty-lines": ["error", {"max": 1}],// 空白行
         "max-params": ["warn", {"maximum": 4}],// function最大入参
         "func-names": 0,
-        "no-unused-vars": 1,// 未引用的变量
+        "no-unused-vars": 0,// 未引用的变量
         "no-underscore-dangle": 0,// 下划线开头命名
         "no-tabs": 0,
         "spaced-comment": 0,// 注释符号前后空格
@@ -77,6 +77,9 @@ module.exports = {
         "consistent-return": 0,
         "no-alert": 1,// 不允许alert
         "no-console": 0,//
-        "no-unused-expressions": ["error", {"allowShortCircuit": true}]
+        "import/prefer-default-export": 0,
+        "no-unused-expressions": ["error", {"allowShortCircuit": true}],
+        "no-param-reassign": 0,
+        "no-plusplus": 0 // i++
     }
 }

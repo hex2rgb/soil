@@ -8,12 +8,16 @@ import Vue from 'vue';
 import App from './App';
 import router from './router';
 import store from './store';
+import {dateFormat} from './filter';
 
 Vue.config.productionTip = false;
 
 Vue.use(Element, {
     size: 'medium' // set element-ui default size
 });
+
+// filter
+// Vue.filter('dateFormat', dateFormat);
 
 /* eslint-disable no-new */
 new Vue({
@@ -23,3 +27,4 @@ new Vue({
     components: {App},
     template: '<App/>'
 });
+
