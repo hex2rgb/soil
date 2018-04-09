@@ -9,6 +9,7 @@ import App from './App';
 import router from './router';
 import store from './store';
 import {dateFormat} from './filter';
+import {extend} from './utils/utils';
 
 Vue.config.productionTip = false;
 

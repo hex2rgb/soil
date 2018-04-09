@@ -25,18 +25,17 @@ export function errorMsg(that, msg) {
 }
 
 /**
- *
- * @param that 当前作用域this
- * @param formname ref
+ * 混合参数
+ * @returns {object}
  */
-export function resetForm(that, formname) {
-    that.$refs[formname] && that.$refs[formname].resetFields();
-}
-
-/**
- * 更新tableData列表
- * @param that 当前作用域this
- */
-export function updateList(that) {
-    that.$refs.childPagination.getList();
+export function extend() {
+    const target = arguments[0] || {};
+    let i = 1;
+    const length = arguments.length;
+    for (; i < length; i++) {
+        for (const k of arguments[i]) {
+            target[k] = arguments[i][k];
+        }
+    }
+    return target;
 }

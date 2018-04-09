@@ -80,6 +80,10 @@ module.exports = {
         "import/prefer-default-export": 0,
         "no-unused-expressions": ["error", {"allowShortCircuit": true}],
         "no-param-reassign": 0,
-        "no-plusplus": 0 // i++
+        "no-plusplus": 0, // i++
+        "radix": 0,
+        "no-continue": 0,
+        "prefer-rest-params": 0,// arguments 是否禁用
+        "no-restricted-syntax": 0// 启用for-of fo-in (eslint推荐foreach)
     }
 }
