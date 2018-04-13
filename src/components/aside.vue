@@ -1,19 +1,26 @@
 <template>
-    <el-row class="tac">
-        <el-col>
-            <el-menu
-                :unique-opened="true"
-                :default-active="activeMenuIndex"
-                class="el-menu-vertical-demo"
-                :router="true"
-                @open="handleOpen"
-                @close="handleClose">
-                <el-submenu v-for="(item,key) in menu" :key="key" :index="item.router">
-                    <template slot="title">
-                        <i class="el-icon-location"></i>
-                        <span>{{item.groupTitle}}</span>
-                    </template>
-                    <el-menu-item-group>
+    <div class="aside">
+        <el-radio-group v-model="menuConf.isCollapse">
+            <div :class="{collapse:true,active:menuConf.isCollapse}"
+                 @click="menuConf.isCollapse=!menuConf.isCollapse">
+                折叠
+            </div>
+        </el-radio-group>
+        <el-row class="tac">
+            <el-col>
+                <el-menu
+                    :collapse="menuConf.isCollapse"
+                    :unique-opened="true"
+                    :default-active="activeMenuIndex"
+                    class="el-menu-vertical-demo"
+                    :router="true"
+                    @open="handleOpen"
+                    @close="handleClose">
+                    <el-submenu v-for="(item,key) in menuList" :key="key" :index="item.router">
+                        <template slot="title">
+                            <i class="el-icon-location"></i>
+                            <span>{{item.groupTitle}}</span>
+                        </template>
                         <el-menu-item
                             v-for="(children,key) in item.children"
                             :key="key"
@@ -21,11 +28,11 @@
                             :disabled="children.disabled">
                             {{children.title}}
                         </el-menu-item>
-                    </el-menu-item-group>
-                </el-submenu>
-            </el-menu>
-        </el-col>
-    </el-row>
+                    </el-submenu>
+                </el-menu>
+            </el-col>
+        </el-row>
+    </div>
 </template>
 
 <script>
@@ -33,10 +40,10 @@
         name: 'sidebar',
         data: function () {
             return {
-                menu: [
+                menuList: [
                     {
-                        groupTitle: '导航1',
-                        router: '/router11',
+                        groupTitle: '首页',
+                        router: '/home',
                         children: [
                             {router: '/page1', title: '选项11', disabled: false},
                             {router: '/page2', title: '选项12', disabled: false}
@@ -50,7 +57,10 @@
                             {router: '/router22', title: '选项22', isDisable: true}
                         ]
                     }
-                ]
+                ],
+                menuConf: {
+                    isCollapse: false
+                }
             };
         },
         methods: {
@@ -69,3 +79,21 @@
         }
     };
 </script>
+<style lang="scss" scoped>
+    .aside {
+        .collapse {
+            background-color: #fff;
+            width: 200px;
+            height: 30px;
+            font-size: 16px;
+            line-height: 30px;
+            text-align: center;
+        }
+        .active {
+            width: 36px;
+        }
+        .el-menu {
+            border-right: 0 none;
+        }
+    }
+</style>

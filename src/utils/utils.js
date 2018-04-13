@@ -39,3 +39,34 @@ export function extend() {
     }
     return target;
 }
+
+/**
+ * 跨域
+ * @param options.url 请求链接
+ * @param options.data 请求参数
+ * @param options.success 请求
+ * @param options.callback callback名称
+ * @param options.success 回调
+ */
+function jsonp(options) {
+    function _format(data) {
+        let str = '';
+        for (const key of data) {
+            str += `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}&`;
+        }
+        return str;
+    }
+
+    const url = options.url;
+    const data = options.data;
+    const oBody = document.getElementsByTagName('body')[0];
+    const oScript = document.createElement('script');
+    const callbackName = options.callback || `cb${Math.random().toString(36).substr(3)}`;
+
+    window[callbackName] = function (result) {
+        options.success(result);
+    };
+    data[options.callback] = callbackName;
+    oScript.setAttribute('src', `${url}?${_format(data)}`);
+    oBody.append(oScript);
+}
