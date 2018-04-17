@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div :class="{container:true,active:isCollapse}">
         <div class="header"></div>
         <div class="aside">
             <Aside></Aside>
@@ -16,7 +16,12 @@
 
     export default {
         name: 'layouts',
-        components: {Aside, Headers}
+        components: {Aside, Headers},
+        computed: {
+            isCollapse() {
+                return this.$store.state.collapse;
+            }
+        }
     };
 </script>
 
@@ -24,11 +29,6 @@
 <style lang='scss' scoped>
     $header-top: 44px;
     $aside-left: 200px;
-
-    .container {
-        width: 100%;
-        height: 100%;
-    }
 
     .header {
         position: fixed;
@@ -49,7 +49,7 @@
         height: 100%;
         padding-top: $header-top;
         box-sizing: border-box;
-        background-color: rgba(243, 255, 14, 1);
+        background-color: #fff;
         overflow-x: hidden;
         overflow-y: auto;
     }

@@ -1,2 +1,4 @@
 # Created by .ignore support plugin (hsz.mobi)
 /src/styles/base/normalize.scss
+/static/
+/src/assets/font/
