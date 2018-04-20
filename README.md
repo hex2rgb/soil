@@ -29,6 +29,7 @@ Projet
    ├─ assets  资源
    │    ├─ images  图片资源
    │    ├─ video  视频资源
+   │    ├─ fonts  字体
    │    └─ audio  音频资源
    │   
    │   

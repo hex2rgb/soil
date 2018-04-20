@@ -53,15 +53,21 @@
             return {
                 menuList: [
                     {
+                        title: '首页',
+                        router: '/home',
+                        isDisable: true,
+                        iconClass: 'iconfont icon-home'
+                    },
+                    {
                         title: '图表',
                         router: '/charts',
                         isDisable: true,
-                        iconClass: 'iconfont icon-zhuye'
+                        iconClass: 'iconfont icon-chart'
                     },
                     {
                         groupTitle: '表单',
                         router: '/form',
-                        iconClass: 'iconfont icon-zhexiantu',
+                        iconClass: 'iconfont icon-biaodan',
                         children: [
                             {
                                 router: '/page1',
@@ -78,9 +84,14 @@
                         ]
                     },
                     {
+                        groupTitle: '表格',
+                        router: '/table',
+                        iconClass: 'iconfont icon-biaoge'
+                    },
+                    {
                         groupTitle: '穿梭框',
                         router: '/transf',
-                        iconClass: 'el-icon-location',
+                        iconClass: 'iconfont icon-chuansuokuang',
                         children: [
                             {
                                 router: '/router21',
