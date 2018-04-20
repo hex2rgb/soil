@@ -5,8 +5,6 @@
 </template>
 
 <script>
-    import '@/components/header';
-
     export default {
         name: 'App'
     };

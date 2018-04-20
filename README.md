@@ -98,11 +98,20 @@ Projet
    │    ├─ header
    │    ├─ aside 
    │    ├─ nav 顶部导航
+   │    │
    │    └─ 
    │   
-   │   
-   ├─ layouts 布局组件 container
    │
+   ├─ layouts 布局组件 container
+   │    ├─ compontens
+   │    │   ├─ footer
+   │    │   ├─ header
+   │    │   ├─ aside
+   │    │   ├─ nav 顶部导航
+   │    │   └─
+   │    │   
+   │    └─  layouts.vue 
+   │       
    │
    ├─ router 路由配置  
    │
