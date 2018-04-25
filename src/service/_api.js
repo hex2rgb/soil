@@ -5,18 +5,17 @@ function _env() {
     return process.env.NODE_ENV || 'production';
 }
 
-const rootPath = '/src';
 const devApi = {
 
     // 字典-----start
-    apiTableList: `${rootPath}/mock/table_list.json`,
+    apiTableList: '/mock/table_list.json',
     // 字典-----end
 
     // 登录
-    apiSubmitLogin: `${rootPath}/mock/common.json`,
+    apiSubmitLogin: '/mock/common.json',
 
     // 删除
-    apiDel: `${rootPath}/mock/common.json`
+    apiDel: '/mock/common.json'
 };
 
 const proApi = {
