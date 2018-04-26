@@ -54,7 +54,7 @@ module.exports = {
         "indent": 0, // 缩进4空格  tab
         "eqeqeq": 0,// 全等== ===  // 不强制
         "semi": 2, // 结尾分号 // 强制
-        "max-len": ["error", 100],
+        "max-len": ["error", 130],
         "comma-dangle": ["error", { // 结尾逗号  // 强制取消
             "arrays": "never",
             "objects": "never",
