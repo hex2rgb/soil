@@ -1,5 +1,5 @@
 /**
- *
+ * 失败toast
  * @param that 当前作用域this
  * @param msg 提示消息
  */
@@ -12,7 +12,7 @@ export function successMsg(that, msg) {
 }
 
 /**
- *
+ * 成功toast
  * @param that 当前作用域this
  * @param msg 提示消息
  */
