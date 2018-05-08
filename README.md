@@ -94,20 +94,20 @@ Projet
    │    │    ├─ table  
    │    │    └─ alert  
    │    │    
-   │    ├─ footer 
-   │    ├─ header
-   │    ├─ aside 
-   │    ├─ nav 顶部导航
+   │    ├─ 
+   │    ├─ 
+   │    ├─ 
+   │    ├─ 
    │    │
    │    └─ 
    │   
    │
    ├─ layouts 布局组件 container
    │    ├─ compontens
-   │    │   ├─ footer
-   │    │   ├─ header
-   │    │   ├─ aside
-   │    │   ├─ nav 顶部导航
+   │    │   ├─ the_footer
+   │    │   ├─ the_header
+   │    │   ├─ the_aside
+   │    │   ├─ the_nav 顶部导航
    │    │   └─
    │    │   
    │    └─  layouts.vue 

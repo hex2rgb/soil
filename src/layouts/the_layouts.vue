@@ -11,8 +11,8 @@
 </template>
 
 <script>
-    import Aside from '@/layouts/components/aside';
-    import Headers from '@/layouts/components/header';
+    import Aside from '@/layouts/components/the_aside';
+    import Headers from '@/layouts/components/the_header';
 
     export default {
         name: 'layouts',

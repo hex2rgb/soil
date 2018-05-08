@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import layouts from '@/layouts/layouts';
+import layouts from '@/layouts/the_layouts';
 
 /**
  * 模块导入
