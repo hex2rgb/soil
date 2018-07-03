@@ -16,7 +16,8 @@
         "filenamelint": "node node_modules/validate_filename/index.js -e '^[a-z0-9\\-_./]+$|^src/App.vue$' -m '约定文件名由小写字母、数字、_ 、- 组成' `git diff --staged --name-only --diff-filter=ACMRTU -- ./src/**`",
         "stylelint": "stylelint './src/**/*.scss' './src/**/*.vue' --config ./.stylelintrc",
         "precommit": "npm run stylelint && npm run eslint && npm run mocklint && npm run filenamelint",
-        "build": "node build/build.js"
+        "build": "node build/build.js",
+        "eslintfix":"node_modules/.bin/eslint --fix './src/**/*.vue'"
     },
     "dependencies": {
         "axios": "^0.18.0",

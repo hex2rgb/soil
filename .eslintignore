@@ -3,3 +3,5 @@
 /dist/*.*
 /*.js
 /test/unit/coverage/
+/src/assets/font/
+/src/assets/fonts/

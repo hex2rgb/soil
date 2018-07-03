@@ -29,6 +29,7 @@ Projet
    ├─ assets  资源
    │    ├─ images  图片资源
    │    ├─ video  视频资源
+   │    ├─ fonts  字体
    │    └─ audio  音频资源
    │   
    │   
@@ -93,15 +94,24 @@ Projet
    │    │    ├─ table  
    │    │    └─ alert  
    │    │    
-   │    ├─ footer 
-   │    ├─ header
-   │    ├─ aside 
-   │    ├─ nav 顶部导航
+   │    ├─ 
+   │    ├─ 
+   │    ├─ 
+   │    ├─ 
+   │    │
    │    └─ 
    │   
-   │   
-   ├─ layouts 布局组件 container
    │
+   ├─ layouts 布局组件 container
+   │    ├─ compontens
+   │    │   ├─ the_footer
+   │    │   ├─ the_header
+   │    │   ├─ the_aside
+   │    │   ├─ the_nav 顶部导航
+   │    │   └─
+   │    │   
+   │    └─  layouts.vue 
+   │       
    │
    ├─ router 路由配置  
    │

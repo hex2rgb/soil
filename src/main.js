@@ -1,5 +1,6 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
+import '@/assets/fonts/iconfont.css';
 import Element from 'element-ui';
 import '@/styles/element_variables.scss';
 import '@/styles/index.scss';
@@ -8,12 +9,17 @@ import Vue from 'vue';
 import App from './App';
 import router from './router';
 import store from './store';
+import {dateFormat} from './filter';
+import {extend} from './utils/utils';
 
 Vue.config.productionTip = false;
 
 Vue.use(Element, {
     size: 'medium' // set element-ui default size
 });
+
+// filter
+// Vue.filter('dateFormat', dateFormat);
 
 /* eslint-disable no-new */
 new Vue({
@@ -23,3 +29,4 @@ new Vue({
     components: {App},
     template: '<App/>'
 });
+

@@ -47,9 +47,9 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         before(app) {
             app.use(function (req, res, next) {
                 let reg = /\/mock\/\w+\.json/;
-                let path = req.path;
-                if (reg.test(path)) {
-                    let result = fs.readFileSync(`.${path}`, 'utf8')
+                let _path = req.path;
+                if (reg.test(_path)) {
+                    let result = fs.readFileSync(path.join(__dirname, '../src', _path), 'utf8')
                     res.send(JSON5.parse(result));
                     next();
                 }

@@ -9,6 +9,7 @@
                 v-for="(item,key) in tableData.title"
                 :key="key"
                 :prop="item.prop"
+                :formatter="item.prop=='date' ? dateFormat : (item.prop=='name'? moneyFormat:null)"
                 :label="item.label">
             </el-table-column>
             <el-table-column align="center" label="操作">
@@ -55,6 +56,7 @@
 
 <script>
     import {fetchList, del, modOrAdd} from '@/service/getData';
+    import {dateFormatHandler, moneyFormatHandler} from '@/filter';
 
     let originData = '';
     export default {
@@ -86,6 +88,12 @@
             };
         },
         methods: {
+            dateFormat(date) {
+                return dateFormatHandler(date.date, 'yyyy-MM-dd hh:mm:ss');
+            },
+            moneyFormat(number) {
+                return moneyFormatHandler(number.name, '$');
+            },
             // 获取列表
             getList(params) {
                 fetchList({params})
@@ -150,7 +158,8 @@
         },
         mounted() {
             this.getList();
-        }
+        },
+        computed: {}
     };
 </script>
 <style lang="scss" scoped>
