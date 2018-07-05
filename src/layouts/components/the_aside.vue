@@ -2,7 +2,8 @@
     <div class="aside">
         <div class="collapse"
              @click="collapse">
-            折叠
+            <span v-if="isCollapse">展开</span>
+            <span v-else>折叠</span>
         </div>
         <el-row class="tac">
             <el-col>
@@ -37,7 +38,7 @@
                             :key="key"
                             :disabled="item.disabled">
                             <i :class="item.iconClass"></i>
-                            {{item.title}}
+                            <span slot="title">{{item.title}}</span>
                         </el-menu-item>
                     </template>
                 </el-menu>
