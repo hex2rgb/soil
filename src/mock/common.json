@@ -1,4 +1,11 @@
 {
     "status": 0,
-    "message": "操作成功"
+    "message": "操作成功",
+    "data": {
+        "token": "tokenid",
+        "roles":["admin"],
+        "name":"name",
+        "avatar":"avatar",
+        "introduction":"introduction"
+    }
 }

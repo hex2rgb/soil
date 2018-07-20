@@ -34,9 +34,7 @@
                     <dd>
                         <img src="/admin/index/getcodeimg" alt=""/>
                     </dd>
-                    <dd style="text-align: center;">
-                        设置设置设置设置设置设置设置
-                    </dd>
+                    <dd>设置设置设置设置设置设置设置</dd>
                 </dl>
             </li>
             <li class="layui-nav-item layui-nav-item-last" pc="">

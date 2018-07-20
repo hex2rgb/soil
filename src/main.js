@@ -4,13 +4,12 @@ import '@/assets/fonts/iconfont.css';
 import Element from 'element-ui';
 import '@/styles/element_variables.scss';
 import '@/styles/index.scss';
+import '@/permission';
 import 'babel-polyfill';
 import Vue from 'vue';
-import App from './App';
-import router from './router';
-import store from './store';
-import {dateFormat} from './filter';
-import {extend} from './utils/utils';
+import App from '@/App';
+import router from '@/router';
+import store from '@/store';
 
 Vue.config.productionTip = false;
 

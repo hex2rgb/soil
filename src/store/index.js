@@ -1,22 +1,19 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import permission from './modules/permission';
+import user from './modules/user';
+import app from './modules/app';
+import getters from './getters';
 
 Vue.use(Vuex);
+
 const store = new Vuex.Store({
-    state: {
-        collapse: false
+    modules: {
+        user,
+        permission,
+        app
     },
-    mutations: {
-        collapse(state) {
-            state.collapse = !state.collapse;
-        }
-    },
-    actions: {
-        commonConf({commit}) {
-            commit('getPayway');
-            commit('getGoods');
-            commit('getOprs');
-        }
-    }
+    getters
 });
+
 export default store;
