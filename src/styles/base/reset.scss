@@ -22,19 +22,3 @@ body {
 .clearfix {
     zoom: 1;
 }
-
-.container {
-    width: 100%;
-    height: 100%;
-    &.active {
-        color: #000;
-        .aside {
-            width: 64px;
-            transition: width 0.28s;
-        }
-        .content {
-            padding-left: 72px;
-            transition: width 0.28s;
-        }
-    }
-}
