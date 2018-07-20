@@ -15,6 +15,7 @@ module.exports = {
         "at-rule-name-case": "lower",
         // function name
         "function-name-case": "lower",
+        "at-rule-empty-line-before": "never",
         "selector-max-id": 2,
         "selector-max-class": 4,
         "rule-empty-line-before": ["always", {

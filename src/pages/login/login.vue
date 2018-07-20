@@ -23,8 +23,8 @@
         data: function () {
             return {
                 form: {
-                    usrname: '',
-                    pwd: ''
+                    usrname: '123',
+                    pwd: '123'
                 },
                 rules: {
                     usrname: [{required: true, message: '请输入用户名', trigger: 'blur'}],
@@ -36,9 +36,11 @@
             submitForm(formName) {
                 this.$refs[formName].validate((valid) => {
                     if (valid) {
-                        login(this.form)
+                        this.$store.dispatch('LoginByUsername', this.form)
                             .then(() => {
                                 this.$router.push({path: '/home'});
+                            })
+                            .catch(() => {
                             });
                     } else {
                         return false;

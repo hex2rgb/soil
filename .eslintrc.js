@@ -54,7 +54,7 @@ module.exports = {
         "indent": 0, // 缩进4空格  tab
         "eqeqeq": 0,// 全等== ===  // 不强制
         "semi": 2, // 结尾分号 // 强制
-        "max-len": ["error", 130],
+        "max-len": ["warn", 150],
         "comma-dangle": ["error", { // 结尾逗号  // 强制取消
             "arrays": "never",
             "objects": "never",
@@ -83,7 +83,10 @@ module.exports = {
         "no-plusplus": 0, // i++
         "radix": 0,
         "no-continue": 0,
+        "quote-props": 0,
+        "no-lonely-if": 0,
+        "padded-blocks": ["error", "never"],
         "prefer-rest-params": 0,// arguments 是否禁用
-        "no-restricted-syntax": 0// 启用for-of fo-in (eslint推荐foreach)
+        "no-restricted-syntax": 0 // 启用for-of fo-in (eslint推荐foreach)
     }
 }
