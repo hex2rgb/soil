@@ -1,6 +1,6 @@
 import http from 'axios';
 import {Message} from 'element-ui';
-import router from '@/router/index';
+import router from '@/router';
 import qs from 'qs';
 
 // const url = location.href;
@@ -10,13 +10,8 @@ function regExp(params) {
     return /form-data/.test(params);
 }
 
-function regApi(api) {
-    return /getStatusDic|goods\/index|order\/payway/.test(api.request.responseURL);
-}
-
 const baseURL = process.env.NODE_ENV === 'development' ? '' : 'http://127.0.0.1:8006/';
 http.defaults.baseURL = baseURL;
-// http.defaults.headers.common['Authorization'] = AUTH_TOKEN;
 http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
 // 添加请求拦截器
@@ -41,17 +36,13 @@ http.interceptors.response.use((response) => {
     // loadingInstance.close({background: 'rgba(0,0,0,.1)'});
     const data = response.data;
     if (response.status === 200) {
-        if (data.status == '-1') {
-            router.push('/login');
-        }
-        if (data.status !== 0 && !regApi(response)) {
+        if (data.status != 0) {
             Message({
                 showClose: true,
                 message: data.msg,
                 type: 'error'
             });
-            return new Promise(() => {
-            });
+            return Promise.reject();
         }
     }
     // 对响应数据做点什么
