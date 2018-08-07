@@ -60,7 +60,7 @@ Projet
    │          
    │          
    ├─ service 异步请求(列表,基础数据)
-   │    ├─ _api.js 
+   │    ├─ \_api.js 
    │    ├─ getData.js
    │    └─       
    │            
