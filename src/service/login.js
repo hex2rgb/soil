@@ -1,4 +1,4 @@
-import http from '@/utils/request';
+import {$post, $get} from '@/utils/request';
 import api from './_api';
 
 const {apiSubmitLogin} = api;
@@ -8,11 +8,7 @@ const {apiSubmitLogin} = api;
  * @param data
  */
 export function login(data) {
-    return http({
-        url: apiSubmitLogin,
-        method: 'post',
-        data
-    });
+    return $post(apiSubmitLogin, data);
 }
 
 /**
@@ -20,11 +16,7 @@ export function login(data) {
  * @param data
  */
 export function logout(data) {
-    return http({
-        url: apiSubmitLogin,
-        method: 'post',
-        data
-    });
+    return $post(apiSubmitLogin, data);
 }
 
 /**
@@ -32,10 +24,6 @@ export function logout(data) {
  * @param data
  */
 export function getUserInfo(data) {
-    return http({
-        url: apiSubmitLogin,
-        method: 'post',
-        data
-    });
+    return $post(apiSubmitLogin, data);
 }
 

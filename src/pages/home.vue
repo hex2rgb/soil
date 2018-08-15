@@ -55,7 +55,7 @@
 </template>
 
 <script>
-    import {fetchList, del, modOrAdd} from '@/service/getData';
+    import {fetchList, del, modOrAdd} from '@/service/get_data';
     import {dateFormatHandler, moneyFormatHandler} from '@/filter';
 
     let originData = '';

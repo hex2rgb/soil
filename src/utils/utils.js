@@ -1,10 +1,11 @@
+import {Message} from 'element-ui';
+
 /**
  * 失败toast
- * @param that 当前作用域this
  * @param msg 提示消息
  */
-export function successMsg(that, msg) {
-    that.$message({
+export function successMsg(msg) {
+    Message({
         showClose: true,
         message: msg || '操作成功',
         type: 'success'
@@ -13,11 +14,10 @@ export function successMsg(that, msg) {
 
 /**
  * 成功toast
- * @param that 当前作用域this
  * @param msg 提示消息
  */
-export function errorMsg(that, msg) {
-    that.$message({
+export function errorMsg(msg) {
+    Message({
         showClose: true,
         message: msg || '操作失败',
         type: 'error'
