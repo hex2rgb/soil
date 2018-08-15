@@ -17,8 +17,6 @@
 </template>
 
 <script>
-    import {login} from '@/service/getData';
-
     export default {
         data: function () {
             return {
