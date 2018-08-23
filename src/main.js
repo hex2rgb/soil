@@ -10,15 +10,14 @@ import Vue from 'vue';
 import App from '@/App';
 import router from '@/router';
 import store from '@/store';
+import * as utils from '@/utils/utils';
 
 Vue.config.productionTip = false;
+Vue.prototype.$utils = {...utils};
 
 Vue.use(Element, {
     size: 'medium' // set element-ui default size
 });
-
-// filter
-// Vue.filter('dateFormat', dateFormat);
 
 /* eslint-disable no-new */
 new Vue({
