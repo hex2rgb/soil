@@ -20,7 +20,7 @@
         "axios": "^0.18.0",
         "babel-polyfill": "^6.26.0",
         "echarts": "^4.1.0",
-        "element-ui": "^2.4.4",
+        "element-ui": "^2.4.6",
         "js-cookie": "^2.2.0",
         "qs": "^6.5.1",
         "v-charts": "^1.17.8",

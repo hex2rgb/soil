@@ -16,7 +16,7 @@ export function login(data) {
  * @param params
  */
 export function fetchList(params) {
-    return $post(apiTableList, params);
+    return $get(apiTableList, params);
 }
 
 /**

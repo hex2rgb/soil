@@ -1,5 +1,7 @@
 <template>
     <div>
+        <el-input v-model="input"></el-input>
+        <el-button @click="getList">搜索</el-button>
         <div class="toolbar">
             <el-button type="primary" @click="dialog.dialogFormVisible=true">添加</el-button>
         </div>
@@ -23,15 +25,7 @@
                 </template>
             </el-table-column>
         </el-table>
-        <!-- <div class="pagenation">
-             <div class="inner">
-                 <el-pagination
-                     background
-                     layout="prev, pager, next"
-                     :total="1000">
-                 </el-pagination>
-             </div>
-         </div>-->
+        <spagenation :params="tableData.data" :pageChange="getList"></spagenation>
         <el-dialog title="popup"
                    @close="close('form')"
                    :visible.sync="dialog.dialogFormVisible">
@@ -55,20 +49,29 @@
 </template>
 
 <script>
-    import {fetchList, del, modOrAdd} from '@/service/get_data';
+    import spagenation from 'comp/common/pagination';
+    import {del, fetchList, modOrAdd} from '@/service/get_data';
     import {dateFormatHandler, moneyFormatHandler} from '@/filter';
 
     let originData = '';
     export default {
         name: 'page1',
+        computed: {
+            currentPage() {
+                return this.tableData.currentPage;
+            }
+        },
+        components: {spagenation},
         data: function () {
             return {
+                input: '',
                 tableData: {
                     title: [
                         {label: '日期', prop: 'date'},
                         {label: '姓名', prop: 'name'},
                         {label: '地址', prop: 'address'}],
-                    list: []
+                    list: [],
+                    data: {}
                 },
                 dialog: {
                     formLabelWidth: '4em',
@@ -95,10 +98,14 @@
                 return moneyFormatHandler(number.name, '$');
             },
             // 获取列表
-            getList(params) {
-                fetchList({params})
+            getList(currentPage) {
+                const params = this.$utils.copy({input: this.input});
+                params.currentPage = (typeof currentPage === 'number') ? (currentPage || 1) : 1;
+                return fetchList(params)
                     .then((res) => {
                         this.tableData.list = res.list;
+                        this.tableData.data = res;
+                        return res;
                     });
             },
             // 窗口被关闭时,清空表单校验以及数据
@@ -157,9 +164,7 @@
             }
         },
         mounted() {
-            this.getList();
-        },
-        computed: {}
+        }
     };
 </script>
 <style lang="scss" scoped>
