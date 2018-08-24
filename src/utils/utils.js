@@ -41,6 +41,15 @@ export function extend() {
 }
 
 /**
+ * 拷贝简单对象
+ * @param json
+ * @returns {any}
+ */
+export function copy(json) {
+    return JSON.parse(JSON.stringify(json));
+}
+
+/**
  * 跨域
  * @param options.url 请求链接
  * @param options.data 请求参数

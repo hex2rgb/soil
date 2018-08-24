@@ -15,32 +15,18 @@ const _env = function () {
     }
 };
 
-const rootPath = (function (url) {
+const rootPath = (function () {
     switch (_env()) {
         case 'proxy':
             return '/api';
-        case 'production':
-            return '';
         case 'mock':
-            return 1;
+            return '/app';
         default:
             return '请检查环境配置';
     }
 }());
 
-const devApi = {
-
-    // 字典-----start
-    apiTableList: '/mock/table_list.json',
-
-    // 登录
-    apiSubmitLogin: '/mock/common.json',
-
-    // 删除
-    apiDel: '/mock/common.json'
-};
-
-const proApi = {
+const api = {
 
     // 列表
     apiTableList: `${rootPath}/list`,
@@ -49,21 +35,11 @@ const proApi = {
     apiSubmitLogin: `${rootPath}/login`,
 
     // 删除
-    apiDel: `${rootPath}/del`,
+    apiDel: `${rootPath}/common`,
 
     // 添加修改
-    apiModOrAdd: `${rootPath}/modOrAdd`
+    apiModOrAdd: `${rootPath}/common`
 
 };
-export default (function () {
-    switch (_env()) {
-        case 'proxy':
-        case 'production':
-            return proApi;
-        case 'mock':
-            return devApi;
-        default:
-            return '请检查环境配置';
-    }
-}());
+export default api;
 
