@@ -19,10 +19,11 @@ const rootPath = (function () {
     switch (_env()) {
         case 'proxy':
             return '/api';
+        case 'production':
         case 'mock':
             return '/app';
         default:
-            return '请检查环境配置';
+            throw new Error('请检查环境配置');
     }
 }());
 
