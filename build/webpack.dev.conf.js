@@ -46,12 +46,27 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         },
         before(app) {
             app.use(function (req, res, next) {
-                let reg = /\/app\//;
+                let reg = /\/mock\//;
                 let _path = req.path;
                 if (reg.test(_path)) {
-                    let newPath = `${_path.substring(5)}.json`;
+                    console.log('请求路径url:', req.url);
+                    // 截取 /mock/
+                    let newPath = `${_path.substring(6)}.json`;
                     newPath = newPath.replace(/\//g, '_');
-                    let result = fs.readFileSync(path.join(__dirname, '../src/mock', newPath), 'utf8')
+                    console.log('文件名称: ', newPath);
+                    let result = {};
+                    try {
+                        result = fs.readFileSync(path.join(__dirname, '../src/mock', newPath), 'utf8');
+                    } catch (e) {
+                        console.log(e.message);
+                        if (e.message.indexOf('no such file or directory')) {
+                            res.status(404);
+                            res.send({});
+                            return;
+                        } else {
+
+                        }
+                    }
                     res.send(JSON5.parse(result));
                     next();
                 }

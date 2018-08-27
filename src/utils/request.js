@@ -3,6 +3,43 @@ import qs from 'qs';
 import {errorMsg} from '@/utils/utils';
 
 /**
+ * 1.本地调试
+ *      a.通过localhost访问本地数据
+ *      b.通过127.0.0.1代理访问线上数据
+ * 2.线上环境真实数据
+ */
+const _env = function () {
+    const url = location.href;
+    console.log(process.env.NODE_ENV);
+    if (process.env.NODE_ENV != 'production') {
+        // 本地环境
+        if (url.indexOf('localhost') > -1) {
+            // 假数据
+            return 'mock';
+        } else if (url.indexOf('127.0.0.1') > -1) {
+            // 代理线上数据
+            return 'proxy';
+        }
+    } else {
+        // 生产
+        return 'production';
+    }
+};
+
+const baseUrl = (function () {
+    switch (_env()) {
+        case 'proxy':
+            return '/proxy';
+        case 'mock':
+            return '/mock';
+        case 'production':
+            return 'http://172.19.163.208:8080/app';
+        default:
+            throw new Error('请检查api前缀');
+    }
+}());
+
+/**
  * 错误码列表
  * @param error
  * @returns {*|string}
@@ -29,7 +66,7 @@ function regExp(params) {
     return /form-data/.test(params);
 }
 
-axios.defaults.baseURL = process.env.NODE_ENV === 'development' ? '' : 'http://127.0.0.1:8006/';
+axios.defaults.baseURL = baseUrl;
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
 const $http = axios.create();

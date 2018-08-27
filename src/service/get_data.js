@@ -1,22 +1,11 @@
-import {$post, $get} from '@/utils/request';
-import api from './_api';
-
-const {apiTableList, apiSubmitLogin, apiDel, apiModOrAdd} = api;
-
-/**
- * 登录
- * @param data
- */
-export function login(data) {
-    return $post(apiSubmitLogin, data);
-}
+import {$get, $post} from '@/utils/request';
 
 /**
  * 请求列表
  * @param params
  */
 export function fetchList(params) {
-    return $get(apiTableList, params);
+    return $get('/a/list', params);
 }
 
 /**
@@ -24,7 +13,7 @@ export function fetchList(params) {
  * @param data
  */
 export function modOrAdd(data) {
-    return $post(apiModOrAdd, data);
+    return $post('/common', data);
 }
 
 /**
@@ -32,6 +21,6 @@ export function modOrAdd(data) {
  * @param data
  */
 export function del(data) {
-    return $post(apiDel, data);
+    return $post('/common', data);
 }
 

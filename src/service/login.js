@@ -1,14 +1,11 @@
-import {$post, $get} from '@/utils/request';
-import api from './_api';
-
-const {apiSubmitLogin} = api;
+import {$get, $post} from '@/utils/request';
 
 /**
  * 登录
  * @param data
  */
 export function login(data) {
-    return $post(apiSubmitLogin, data);
+    return $post('/login', data);
 }
 
 /**
@@ -16,7 +13,7 @@ export function login(data) {
  * @param data
  */
 export function logout(data) {
-    return $post(apiSubmitLogin, data);
+    return $post('/login', data);
 }
 
 /**
@@ -24,6 +21,6 @@ export function logout(data) {
  * @param data
  */
 export function getUserInfo(data) {
-    return $post(apiSubmitLogin, data);
+    return $post('/login', data);
 }
 
